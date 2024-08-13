@@ -151,7 +151,7 @@ def from_pdb_string(pdb_str: str, chain_id: Optional[str] = None) -> Protein:
 
     unique_chain_ids = np.unique(chain_ids)
     chain_id_mapping = {cid: n for n, cid in enumerate(string.ascii_uppercase)}
-    chain_index = np.array([chain_id_mapping[cid] for cid in chain_ids])
+    chain_index = np.array([chain_id_mapping[cid] if cid in chain_id_mapping else 0 for cid in chain_ids])
 
     return Protein(
         atom_positions=np.array(atom_positions),

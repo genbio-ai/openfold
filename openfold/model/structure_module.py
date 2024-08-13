@@ -39,7 +39,7 @@ from openfold.utils.tensor_utils import (
     flatten_final_dims,
 )
 
-attn_core_inplace_cuda = importlib.import_module("attn_core_inplace_cuda")
+# attn_core_inplace_cuda = importlib.import_module("attn_core_inplace_cuda")
 
 
 class AngleResnetBlock(nn.Module):
@@ -704,6 +704,7 @@ class StructureModule(nn.Module):
             # [*, N, 7, 2]
             unnormalized_angles, angles = self.angle_resnet(s, s_initial)
 
+            assert aatype.max() < 21, f"Found aatype.max() = {aatype.max()} > 20."
             all_frames_to_global = self.torsion_angles_to_frames(
                 backb_to_global,
                 angles,
