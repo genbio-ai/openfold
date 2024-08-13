@@ -14,9 +14,10 @@
 import importlib
 from typing import Any, Tuple, List, Callable, Optional
 
-deepspeed_is_installed = importlib.util.find_spec("deepspeed") is not None
-if(deepspeed_is_installed):
-    import deepspeed
+# deepspeed_is_installed = importlib.util.find_spec("deepspeed") is not None
+# if(deepspeed_is_installed):
+#     import deepspeed
+deepspeed_is_installed = False
 
 import torch
 import torch.utils.checkpoint

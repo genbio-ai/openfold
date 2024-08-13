@@ -37,7 +37,8 @@ def enforce_config_constraints(config):
         if(s1_setting and s2_setting):
             raise ValueError(f"Only one of {s1} and {s2} may be set at a time")
 
-    fa_is_installed = importlib.util.find_spec("flash_attn") is not None
+    # fa_is_installed = importlib.util.find_spec("flash_attn") is not None
+    fa_is_installed = False
     if(config.globals.use_flash and not fa_is_installed):
         raise ValueError("use_flash requires that FlashAttention is installed")
 
