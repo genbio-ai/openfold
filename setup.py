@@ -85,27 +85,27 @@ setup(
         "openfold": ['utils/kernel/csrc/*'],
         "": ["resources/stereo_chemical_props.txt"]
     },
-    ext_modules=[CUDAExtension(
-        name="attn_core_inplace_cuda",
-        sources=[
-            "openfold/utils/kernel/csrc/softmax_cuda.cpp",
-            "openfold/utils/kernel/csrc/softmax_cuda_kernel.cu",
-        ],
-        include_dirs=[
-            os.path.join(
-                os.path.dirname(os.path.abspath(__file__)),
-                'openfold/utils/kernel/csrc/'
-            )
-        ],
-        extra_compile_args={
-            'cxx': ['-O3'] + version_dependent_macros,
-            'nvcc': (
-                ['-O3', '--use_fast_math'] +
-                version_dependent_macros +
-                extra_cuda_flags
-            ),
-        }
-    )],
+    # ext_modules=[CUDAExtension(
+    #     name="attn_core_inplace_cuda",
+    #     sources=[
+    #         "openfold/utils/kernel/csrc/softmax_cuda.cpp",
+    #         "openfold/utils/kernel/csrc/softmax_cuda_kernel.cu",
+    #     ],
+    #     include_dirs=[
+    #         os.path.join(
+    #             os.path.dirname(os.path.abspath(__file__)),
+    #             'openfold/utils/kernel/csrc/'
+    #         )
+    #     ],
+    #     extra_compile_args={
+    #         'cxx': ['-O3'] + version_dependent_macros,
+    #         'nvcc': (
+    #             ['-O3', '--use_fast_math'] +
+    #             version_dependent_macros +
+    #             extra_cuda_flags
+    #         ),
+    #     }
+    # )],
     cmdclass={'build_ext': BuildExtension},
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
