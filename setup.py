@@ -85,6 +85,9 @@ setup(
         "openfold": ['utils/kernel/csrc/*'],
         "": ["resources/stereo_chemical_props.txt"]
     },
+    install_requires=[
+        "torch",
+    ],
     # ext_modules=[CUDAExtension(
     #     name="attn_core_inplace_cuda",
     #     sources=[
