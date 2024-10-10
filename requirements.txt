@@ -1,0 +1,9 @@
+deepspeed==0.12.4
+dm-tree==0.1.6
+einops
+scipy
+numpy<2.0
+torch==2.1.0
+flash-attn
+modelcif==0.7
+# ihm==1.6

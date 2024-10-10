@@ -10,3 +10,4 @@ data
 openfold/resources/
 tests/test_data/
 cutlass/
+wheel/

@@ -1,0 +1,14 @@
+biopython
+deepspeed==0.12.4
+dm-tree==0.1.6
+lightning
+omegaconf
+ml-collections
+einops
+scipy
+numpy
+pandas
+torch==2.1.0
+flash-attn
+modelcif==0.7
+dllogger @ git+https://github.com/NVIDIA/dllogger.git
