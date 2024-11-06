@@ -7,7 +7,7 @@ dist
 
 # files from script downloads
 data
-openfold/resources/
+# openfold/resources/
 tests/test_data/
 cutlass/
 wheel/

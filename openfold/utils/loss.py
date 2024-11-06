@@ -1540,7 +1540,7 @@ def compute_renamed_ground_truth(
         atom14_gt_exists[..., None, :, None]
         * atom14_atom_is_ambiguous[..., None, :, None]
         * atom14_gt_exists[..., None, :, None, :]
-        * (1.0 - atom14_atom_is_ambiguous[..., None, :, None, :])
+        * (1.0 - atom14_atom_is_ambiguous[..., None, :, None, :].float())
     )
 
     per_res_lddt = torch.sum(mask * lddt, dim=(-1, -2, -3))

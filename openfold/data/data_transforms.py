@@ -754,7 +754,7 @@ def make_atom14_positions(protein):
 
     # Pick the transformation matrices for the given residue sequence
     # shape (num_res, 14, 14).
-    renaming_transform = renaming_matrices[protein["aatype"]]
+    renaming_transform = renaming_matrices[protein["aatype"]].float()
 
     # Apply it to the ground truth positions. shape (num_res, 14, 3).
     alternative_gt_positions = torch.einsum(
